@@ -16,7 +16,7 @@ import tempfile
 from functools import partial
 
 from vendor.Qt.QtWebKit import *
-#from vendor.Qt.QtWebKitWidgets import *
+from vendor.Qt.QtWebKitWidgets import *
 from vendor.Qt.QtWidgets import QApplication
 
 import syncsketchGUI
@@ -175,7 +175,7 @@ class OpenPlayer(QWebView):
     window_name = 'fdfd'
     window_label = 'Login fd SyncSketch'
 
-    def __init__(self, parent, url='https://syncsketchGUI.com/pro'):
+    def __init__(self, parent, url='https://syncsketch.com/pro'):
         super(OpenPlayer, self).__init__(parent)
 
         self.parent = parent
@@ -187,7 +187,7 @@ class OpenPlayer(QWebView):
         self.setWindowFlags(QtCore.Qt.Window)
 
         self.load(QtCore.QUrl(url))
-        # self.load(QtCore.QUrl("https://syncsketchGUI.com/login/?next=/users/getToken/&simple=1"))
+        # self.load(QtCore.QUrl("https://syncsketch.com/login/?next=/users/getToken/&simple=1"))
         # self.setWindowFlags(QtCore.Qt.SplashScreen)
 
         self.show()
@@ -218,7 +218,7 @@ class WebLoginWindow(QWebView):
         self.setObjectName(self.window_name)
         self.setWindowFlags(QtCore.Qt.Window | QtCore.Qt.WindowStaysOnTopHint )
 
-        self.load(QtCore.QUrl("https://syncsketchGUI.com/login/?next=/users/getToken/&simple=1"))
+        self.load(QtCore.QUrl("https://syncsketch.com/login/?next=/users/getToken/&simple=1"))
 
         self.show()
         self.activateWindow()
@@ -233,7 +233,7 @@ class WebLoginWindow(QWebView):
 
     def changed(self):
         thisUrl = self.url().toString()
-        if thisUrl == "https://syncsketchGUI.com/users/getToken/":
+        if thisUrl == "https://syncsketch.com/users/getToken/":
             command = """window.getTokenData()"""
             for i in range(20):
                 jsonData = self.page().mainFrame().evaluateJavaScript(command)
@@ -1986,7 +1986,7 @@ def update_target_from_tree(treeWidget):
         item_data = selected_item.data(1, QtCore.Qt.EditRole)
         item_type = selected_item.data(2, QtCore.Qt.EditRole)
 
-    review_base_url = "https://syncsketchGUI.com/sketch/"
+    review_base_url = "https://syncsketch.com/sketch/"
     current_data={}
     current_data['upload_to_value'] = str()
     current_data['breadcrumb'] = str()
