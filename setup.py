@@ -6,7 +6,7 @@ setup(
     url = 'https://github.com/Schizo/ssmaya.git',
     author = 'Syncsketch',
     author_email = "dev@syncsketch.com",
-    description = "Syncsketch GUI for Autodesk Maya"
+    description = "Syncsketch GUI for Autodesk Maya",
     packages = find_packages(),
     install_requires = [],
 )
