@@ -8,5 +8,6 @@ setup(
     author_email = "dev@syncsketch.com",
     description = "Syncsketch GUI for Autodesk Maya",
     packages = find_packages(),
+    package_data = {'', ['*.yaml']}
     install_requires = [],
 )
